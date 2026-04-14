@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avante Control - Controle de Pragas Profissional no Rio de Janeiro</title>
+<meta name="description" content="Controle de pragas com padrao profissional no Rio de Janeiro. Atendimento rapido, certificado e garantido. Orcamento gratis!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--pk:#E8197D;--pk-dk:#b8125f;--pk-lt:#f03d96;--pk-gw:#ff6ab8;--ch:#2B2B2B;--ch2:#1e1e1e;--ow:#f7f6f5;--tx:#2B2B2B;--mu:#6b6b6b;--bd:#e4dde1;--wp:#25d366;--wp-dk:#128c4e}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;color:var(--tx);background:var(--ow);overflow-x:hidden;line-height:1.6}
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--ch);border-bottom:3px solid var(--pk);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:72px}
+.lw{display:flex;align-items:center;gap:12px;text-decoration:none}
+.li{height:56px;width:auto;display:block}
+.lt strong{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.6rem;color:#fff;letter-spacing:.02em;display:block;line-height:1}
+.lt span{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;color:var(--pk);letter-spacing:.28em;display:block}
+.lt small{font-size:.48rem;color:rgba(255,255,255,.38);letter-spacing:.2em;text-transform:uppercase;display:block}
+.hdr-r{display:flex;align-items:center;gap:14px}
+.hdr-tel{color:rgba(255,255,255,.8);text-decoration:none;font-weight:600;font-size:.93rem;display:flex;align-items:center;gap:6px;transition:color .2s}
+.hdr-tel:hover{color:var(--pk-gw)}
+.bwh{background:var(--wp);color:#fff;text-decoration:none;font-weight:700;font-size:.86rem;padding:9px 20px;border-radius:50px;display:flex;align-items:center;gap:7px;transition:all .2s;white-space:nowrap}
+.bwh:hover{background:var(--wp-dk);transform:scale(1.04)}
+.hero{display:grid;grid-template-columns:1fr 1fr;align-items:start;padding:0 5vw;padding-top:72px;background:var(--ch);position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-120px;top:0;bottom:0;width:55%;background:var(--ch2);transform:skewX(-6deg);z-index:0}
+.h-line{position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--pk),var(--pk-lt),transparent);z-index:3}
+.h-blob{position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(232,25,125,.14) 0%,transparent 70%);right:5%;top:10%;border-radius:50%;animation:blob 7s ease-in-out infinite;z-index:1}
+@keyframes blob{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.1);opacity:1}}
+.h-left{position:relative;z-index:2;display:flex;flex-direction:column;padding:52px 0 0}
+.h-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,25,125,.15);border:1px solid rgba(232,25,125,.4);color:var(--pk-gw);font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:22px;animation:fu .6s ease both}
+.h-h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.4rem,4vw,3.8rem);line-height:1.02;color:#fff;margin-bottom:16px;animation:fu .7s .1s ease both}
+.h-h1 em{font-style:normal;color:var(--pk);display:block}
+.h-sub{font-size:1rem;color:rgba(255,255,255,.65);margin-bottom:26px;max-width:470px;animation:fu .7s .2s ease both}
+.h-pragas{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;animation:fu .7s .3s ease both}
+.ptag{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8);font-size:.81rem;font-weight:600;padding:5px 13px;border-radius:50px}
+.h-ctas{display:flex;flex-direction:column;gap:10px;animation:fu .7s .4s ease both}
+.bwm{background:var(--wp);color:#fff;text-decoration:none;font-weight:800;font-size:1.08rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:.05em;padding:17px 30px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,.35)}
+.bwm:hover{background:var(--wp-dk);transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.5)}
+.btel{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.2);color:#fff;text-decoration:none;font-weight:700;font-size:.96rem;padding:13px 30px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s}
+.btel:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.4)}
+.h-trust{display:flex;gap:22px;margin-top:28px;animation:fu .7s .5s ease both}
+.ti{display:flex;flex-direction:column;align-items:center;gap:3px}
+.tn{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.85rem;color:var(--pk);line-height:1}
+.tl{font-size:.67rem;color:rgba(255,255,255,.5);font-weight:600;text-align:center;text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
+.tsep{width:1px;background:rgba(255,255,255,.12)}
+.team-wrap{margin-top:32px;position:relative;z-index:2;border-radius:18px;padding:4px;background:linear-gradient(135deg,var(--pk) 0%,var(--pk-lt) 40%,#fff 60%,var(--pk-gw) 100%);box-shadow:0 8px 40px rgba(232,25,125,.35);animation:fu .8s .6s ease both}
+.team-img{width:100%;display:block;border-radius:14px;object-fit:cover;object-position:center top;max-height:390px}
+.h-right{position:relative;z-index:2;display:flex;justify-content:center;padding:52px 0 60px 40px;animation:fu .8s .3s ease both}
+.fcard{background:#fff;border-radius:20px;padding:34px 28px;width:100%;max-width:390px;box-shadow:0 24px 64px rgba(0,0,0,.35);border-top:4px solid var(--pk)}
+.f-badge{display:flex;align-items:center;gap:7px;background:#fdf0f7;border:1px solid #f5b8d8;color:var(--pk-dk);font-size:.74rem;font-weight:700;padding:6px 12px;border-radius:8px;margin-bottom:15px;text-transform:uppercase;letter-spacing:.07em}
+.fcard h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--tx);margin-bottom:5px;line-height:1.15}
+.fcard>p{color:var(--mu);font-size:.87rem;margin-bottom:20px}
+.fg{margin-bottom:12px}
+.fg label{display:block;font-size:.74rem;font-weight:700;color:var(--ch);margin-bottom:5px;text-transform:uppercase;letter-spacing:.05em}
+.fg input,.fg select{width:100%;border:1.5px solid var(--bd);border-radius:10px;padding:11px 14px;font-size:.92rem;font-family:'Barlow',sans-serif;color:var(--tx);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.fg input:focus,.fg select:focus{border-color:var(--pk);box-shadow:0 0 0 3px rgba(232,25,125,.1)}
+.fg select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b6b' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer}
+.bfm{width:100%;background:linear-gradient(135deg,var(--pk),var(--pk-lt));color:#fff;border:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;letter-spacing:.05em;padding:15px;border-radius:10px;cursor:pointer;transition:all .2s;margin-top:5px;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 16px rgba(232,25,125,.35)}
+.bfm:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(232,25,125,.45);filter:brightness(1.05)}
+.f-disc{font-size:.7rem;color:var(--mu);text-align:center;margin-top:10px}
+.f-suc{display:none;text-align:center;padding:18px;background:#fdf0f7;border-radius:12px;border:1.5px solid #f5b8d8}
+.f-suc h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.35rem;color:var(--pk-dk);margin-bottom:7px}
+.f-suc p{font-size:.86rem;color:var(--mu)}
+section{padding:80px 5vw}
+.sec-lbl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--pk);margin-bottom:11px;display:flex;align-items:center;gap:8px}
+.sec-lbl::before{content:'';width:26px;height:2.5px;background:var(--pk);border-radius:2px}
+.sec-ttl{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2rem,3.5vw,2.8rem);line-height:1.1;color:var(--tx);margin-bottom:13px}
+.sec-sub{font-size:.97rem;color:var(--mu);max-width:540px;margin-bottom:46px}
+.why{background:#fff}
+.wg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.wc{background:#fff;border:1.5px solid var(--bd);border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;transition:border-color .2s,transform .2s,box-shadow .2s;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+.wc:hover{border-color:var(--pk);transform:translateY(-3px);box-shadow:0 8px 24px rgba(232,25,125,.1)}
+.wi{width:42px;height:42px;flex-shrink:0;background:linear-gradient(135deg,var(--pk),var(--pk-lt));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem}
+.wc-txt{display:flex;flex-direction:column;gap:2px}
+.wc h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1rem;color:var(--tx);margin:0;line-height:1.2}
+.wc p{font-size:.8rem;color:var(--mu);line-height:1.45;margin:0}
+.svc{background:var(--ow)}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.sc{background:#fff;border:1.5px solid var(--bd);border-radius:18px;overflow:hidden;cursor:pointer;transition:all .25s;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.sc:hover{border-color:var(--pk);box-shadow:0 12px 36px rgba(232,25,125,.15);transform:translateY(-4px)}
+.sc img{width:100%;height:180px;object-fit:cover;display:block;transition:transform .4s}
+.sc:hover img{transform:scale(1.04)}
+.sc-desrat img{object-position:center 30%}
+.sb{padding:22px 20px 18px;flex:1;display:flex;flex-direction:column}
+.ser{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.se{font-size:1.8rem;line-height:1}
+.stg{background:rgba(232,25,125,.1);color:var(--pk);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:50px;border:1px solid rgba(232,25,125,.25)}
+.sc h3{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.25rem;color:var(--tx);margin-bottom:8px}
+.sp{font-size:.84rem;color:var(--mu);line-height:1.55;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.sbt{margin-top:16px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,var(--pk),var(--pk-lt));color:#fff;border:none;border-radius:10px;padding:11px 16px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.95rem;letter-spacing:.04em;cursor:pointer;transition:all .2s;box-shadow:0 3px 12px rgba(232,25,125,.3)}
+.sbt:hover{filter:brightness(1.08)}
+.sbt svg{transition:transform .2s}
+.sc:hover .sbt svg{transform:translateX(4px)}
+.mo{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.65);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
+.mo.open{opacity:1;pointer-events:all}
+.md{background:#fff;border-radius:20px;max-width:680px;width:100%;max-height:90vh;overflow-y:auto;transform:translateY(24px) scale(.97);transition:transform .3s;box-shadow:0 32px 80px rgba(0,0,0,.35)}
+.mo.open .md{transform:translateY(0) scale(1)}
+.m-img{width:100%;height:220px;object-fit:cover;border-radius:20px 20px 0 0;display:block}
+.m-body{padding:30px 32px 32px}
+.m-hdr{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px}
+.m-tw{display:flex;align-items:center;gap:12px}
+.m-em{font-size:2.2rem;line-height:1}
+.m-tit{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.9rem;color:var(--tx);line-height:1.1}
+.m-cl{background:var(--ow);border:1.5px solid var(--bd);color:var(--mu);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;transition:all .2s;flex-shrink:0}
+.m-cl:hover{background:var(--pk);border-color:var(--pk);color:#fff}
+.m-tag{display:inline-block;background:rgba(232,25,125,.1);color:var(--pk);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:50px;border:1px solid rgba(232,25,125,.25);margin-bottom:18px}
+.m-txt{font-size:.95rem;color:var(--tx);line-height:1.75;margin-bottom:24px}
+.m-txt p{margin-bottom:12px}
+.m-txt strong{color:var(--ch);font-weight:700}
+.m-cta{display:flex;gap:12px;flex-wrap:wrap}
+.m-wpp{background:var(--wp);color:#fff;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.05rem;padding:14px 24px;border-radius:10px;display:flex;align-items:center;gap:8px;transition:all .2s;box-shadow:0 4px 16px rgba(37,211,102,.35)}
+.m-wpp:hover{background:var(--wp-dk);transform:translateY(-2px)}
+.m-tel{background:linear-gradient(135deg,var(--pk),var(--pk-lt));color:#fff;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.05rem;padding:14px 24px;border-radius:10px;display:flex;align-items:center;gap:8px;transition:all .2s}
+.m-tel:hover{filter:brightness(1.08);transform:translateY(-2px)}
+.cov{background:var(--ch);position:relative;overflow:hidden}
+.cov::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--pk),var(--pk-lt),transparent)}
+.cov .sec-lbl{color:var(--pk-gw)}.cov .sec-lbl::before{background:var(--pk-gw)}
+.cov .sec-ttl{color:#fff}.cov .sec-sub{color:rgba(255,255,255,.6)}
+.cds{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:42px}
+.cd{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.75);font-size:.82rem;font-weight:600;padding:6px 14px;border-radius:50px}
+.cd.hi{background:rgba(232,25,125,.2);border-color:rgba(232,25,125,.4);color:var(--pk-gw)}
+.proc{background:#fff}
+.sps{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:30px}
+.spx{display:flex;flex-direction:column;gap:11px}
+.sn{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3rem;color:var(--pk);line-height:1}
+.spx h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.1rem;color:var(--tx);margin-bottom:4px}
+.spx p{font-size:.85rem;color:var(--mu);line-height:1.5}
+.test{background:var(--ow)}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
+.rc{background:#fff;border:1.5px solid var(--bd);border-radius:15px;padding:24px;border-top:3px solid var(--pk)}
+.rs{color:#f5a623;font-size:.93rem;margin-bottom:11px}
+.rt{font-size:.9rem;color:var(--tx);line-height:1.6;margin-bottom:16px;font-style:italic}
+.rv{display:flex;align-items:center;gap:11px}
+.ra{width:42px;height:42px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--pk)}
+.ri strong{display:block;font-size:.86rem;color:var(--tx);font-weight:700}
+.ri span{font-size:.74rem;color:var(--mu)}
+.mvv{background:var(--ch);padding:60px 5vw;position:relative;overflow:hidden}
+.mvv::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--pk),var(--pk-lt),transparent)}
+.mvv .sec-lbl{color:var(--pk-gw)}.mvv .sec-lbl::before{background:var(--pk-gw)}
+.mvv .sec-ttl{color:#fff;margin-bottom:32px}
+.mvv-car{overflow:hidden}
+.mvv-track{display:flex;transition:transform .42s cubic-bezier(.4,0,.2,1)}
+.mvv-slide{flex:0 0 100%;display:grid;grid-template-columns:200px 1fr;align-items:center;gap:32px}
+.mvv-img{width:200px;height:200px;border-radius:16px;object-fit:cover;border:3px solid rgba(232,25,125,.4);box-shadow:0 8px 32px rgba(232,25,125,.2)}
+.mvv-icon{font-size:2rem;margin-bottom:10px;display:block}
+.mvv-content h3{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;color:var(--pk-gw);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;line-height:1}
+.mvv-content p{font-size:.95rem;color:rgba(255,255,255,.75);line-height:1.65}
+.mvv-content ul{list-style:none;padding:0;margin:0}
+.mvv-content ul li{font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.55;padding:4px 0 4px 18px;position:relative}
+.mvv-content ul li::before{content:'';position:absolute;left:0;top:12px;width:7px;height:7px;background:var(--pk);border-radius:50%}
+
+/* NAV CARROSSEL COMPARTILHADO */
+.car-nav{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:24px}
+.car-btn{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.07);border:1.5px solid rgba(232,25,125,.4);color:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.car-btn:hover{background:var(--pk);border-color:var(--pk)}
+.car-dots{display:flex;gap:8px;align-items:center}
+.car-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer;transition:all .25s;border:none;padding:0}
+.car-dot.on{background:var(--pk);width:22px;border-radius:4px}
+
+/* NAV PARCEIROS (dots escuros) */
+.parc-nav .car-btn{background:rgba(0,0,0,.06);border-color:var(--pk);color:var(--ch)}
+.parc-nav .car-btn:hover{background:var(--pk);color:#fff}
+.parc-nav .car-dot{background:rgba(0,0,0,.18)}
+.parc-nav .car-dot.on{background:var(--pk)}
+
+/* PARCEIROS */
+.parc{background:var(--ow);padding:60px 5vw}
+.parc .sec-ttl{color:var(--tx);margin-bottom:36px}
+.ps-car{overflow:hidden}
+.ps-track{display:flex;transition:transform .42s cubic-bezier(.4,0,.2,1)}
+.ps-slide{flex:0 0 100%;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ps-item{background:#fff;border:1.5px solid var(--bd);border-radius:14px;padding:18px 14px;display:flex;align-items:center;justify-content:center;min-height:96px;transition:border-color .2s,box-shadow .2s,transform .2s}
+.ps-item:hover{border-color:var(--pk);box-shadow:0 6px 20px rgba(232,25,125,.12);transform:translateY(-3px)}
+.ps-item img{max-width:100%;max-height:64px;width:auto;height:auto;object-fit:contain;filter:grayscale(15%);transition:filter .2s}
+.ps-item:hover img{filter:grayscale(0%)}
+
+.ctaf{background:linear-gradient(135deg,var(--ch) 0%,#1a1a1a 100%);text-align:center;padding:96px 5vw;position:relative;overflow:hidden}
+.ctaf::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(232,25,125,.13) 0%,transparent 65%)}
+.ctaf .sec-lbl{justify-content:center;color:var(--pk-gw);position:relative;z-index:1}
+.ctaf .sec-lbl::before{background:var(--pk-gw)}
+.ctaf h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.4rem,4vw,3.5rem);color:#fff;margin-bottom:13px;line-height:1.1;position:relative;z-index:1}
+.ctaf>p{font-size:1.03rem;color:rgba(255,255,255,.65);margin-bottom:38px;max-width:470px;margin-left:auto;margin-right:auto;position:relative;z-index:1}
+.cbs{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;position:relative;z-index:1}
+.bwb{background:var(--wp);color:#fff;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.18rem;letter-spacing:.04em;padding:18px 36px;border-radius:12px;display:flex;align-items:center;gap:10px;transition:all .2s;box-shadow:0 6px 24px rgba(37,211,102,.4)}
+.bwb:hover{background:var(--wp-dk);transform:translateY(-3px);box-shadow:0 12px 36px rgba(37,211,102,.5)}
+.bpb{background:linear-gradient(135deg,var(--pk),var(--pk-lt));color:#fff;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.08rem;padding:18px 30px;border-radius:12px;display:flex;align-items:center;gap:10px;transition:all .2s;box-shadow:0 6px 24px rgba(232,25,125,.4)}
+.bpb:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(232,25,125,.5);filter:brightness(1.06)}
+footer{background:#111;color:rgba(255,255,255,.55);padding:50px 5vw 30px;border-top:3px solid var(--pk)}
+.fg2{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:38px}
+.flw{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.fli{height:54px;width:auto;display:block}
+.flt strong{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;color:#fff;display:block;line-height:1.1}
+.flt span{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;color:var(--pk);letter-spacing:.22em}
+.fdes{font-size:.85rem;line-height:1.65;margin-bottom:18px}
+.fco a{display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.55);text-decoration:none;font-size:.85rem;margin-bottom:8px;transition:color .2s}
+.fco a:hover{color:var(--pk-gw)}
+.fc2 h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.92rem;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.fc2 ul{list-style:none}
+.fc2 ul li{margin-bottom:7px;font-size:.84rem}
+.fbot{border-top:1px solid rgba(255,255,255,.07);padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:.77rem;flex-wrap:wrap;gap:10px}
+.fwp{position:fixed;bottom:24px;right:24px;z-index:200;background:var(--wp);color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.5);transition:transform .2s,box-shadow .2s;animation:wgl 5s 3s ease-in-out infinite}
+.fwp:hover{transform:scale(1.12);box-shadow:0 8px 32px rgba(37,211,102,.6)}
+@keyframes wgl{0%,88%,100%{transform:rotate(0)}90%{transform:rotate(-15deg)}94%{transform:rotate(15deg)}97%{transform:rotate(-8deg)}}
+@keyframes fu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .55s ease,transform .55s ease}
+.rev.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding-top:88px}
+  .hero::after{display:none}
+  .h-right{padding:20px 0 56px}
+  .h-left{padding-top:32px}
+  .team-img{max-height:300px;object-position:center 20%}
+  .fg2{grid-template-columns:1fr 1fr}
+  .hdr-tel{display:none}
+}
+@media(max-width:640px){
+  .mvv-slide{grid-template-columns:1fr;text-align:center;gap:18px}
+  .mvv-img{width:140px;height:140px;margin:0 auto}
+  .mvv-content ul{text-align:left;display:inline-block}
+  .ps-slide{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .h-trust{gap:12px}.tn{font-size:1.55rem}
+  .fg2{grid-template-columns:1fr}
+  .fbot{flex-direction:column;text-align:center}
+  .cbs{flex-direction:column;align-items:center}
+  .bwb,.bpb{width:100%;justify-content:center}
+  .m-body{padding:20px 18px 22px}.m-img{height:160px}
+  .m-cta{flex-direction:column}.m-wpp,.m-tel{justify-content:center}
+  .wg{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="mo" id="modal" onclick="if(event.target===this)fm()">
+  <div class="md">
+    <img class="m-img" id="mimg" src="" alt="">
+    <div class="m-body">
+      <div class="m-hdr">
+        <div class="m-tw"><span class="m-em" id="memo"></span><h2 class="m-tit" id="mtit"></h2></div>
+        <button class="m-cl" onclick="fm()">&#10005;</button>
+      </div>
+      <span class="m-tag" id="mtag"></span>
+      <div class="m-txt" id="mtxt"></div>
+      <div class="m-cta">
+        <a id="mwpp" href="#" class="m-wpp" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Pedir Orçamento no WhatsApp
+        </a>
+        <a href="tel:2127780344" class="m-tel">&#128222; (21) 2778-0344</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a href="https://wa.me/5521986776208?text=Ola!%20Quero%20um%20orcamento." class="fwp" target="_blank">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<header>
+  <a href="#" class="lw">
+    <img src="logo.png" alt="Avante Control" class="li">
+  </a>
+  <div class="hdr-r">
+    <a href="tel:2127780344" class="hdr-tel">&#128222; (21) 2778-0344</a>
+    <a href="https://wa.me/5521986776208?text=Ola!%20Quero%20orcamento." class="bwh" target="_blank">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Orçamento Grátis
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="h-blob"></div><div class="h-line"></div>
+  <div class="h-left">
+    <div class="h-badge">&#10003; Empresa Certificada · Rio de Janeiro</div>
+    <h1 class="h-h1">Livre-se das Pragas<br><em>de Uma Vez por Todas</em></h1>
+    <p class="h-sub">Controle de pragas com padrão profissional, segurança e eficiência comprovada para residências, empresas e condomínios em todo o Rio de Janeiro.</p>
+    <div class="h-pragas">
+      <span class="ptag">&#x1F400; Ratos</span>
+      <span class="ptag">&#x1FAB3; Baratas</span>
+      <span class="ptag">&#x1FAB2; Cupins</span>
+      <span class="ptag">&#x1F577;&#xFE0F; Aranhas</span>
+      <span class="ptag">&#x1F99F; Mosquitos</span>
+      <span class="ptag">&#x1F54A;&#xFE0F; Pombos</span>
+    </div>
+    <div class="h-ctas">
+      <a href="https://wa.me/5521986776208?text=Ola!%20Quero%20orcamento%20gratis." class="bwm" target="_blank">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        FALAR NO WHATSAPP AGORA
+      </a>
+      <a href="tel:2127780344" class="btel">&#128222; Ligar: (21) 2778-0344</a>
+    </div>
+    <div class="h-trust">
+      <div class="ti"><span class="tn">+10</span><span class="tl">Anos de<br>Experiencia</span></div>
+      <div class="tsep"></div>
+      <div class="ti"><span class="tn">+3k</span><span class="tl">Clientes<br>Atendidos</span></div>
+      <div class="tsep"></div>
+      <div class="ti"><span class="tn">100%</span><span class="tl">Certif.<br>Anvisa</span></div>
+      <div class="tsep"></div>
+      <div class="ti"><span class="tn">&#11088;4.9</span><span class="tl">Google<br>Reviews</span></div>
+    </div>
+    <div class="team-wrap">
+      <img class="team-img" src="team.jpg" alt="Equipe Avante Control">
+    </div>
+  </div>
+  <div class="h-right">
+    <div class="fcard">
+      <div class="f-badge">&#128274; Orçamento 100% Grátis · Sem Custo</div>
+      <h2>Receba seu orçamento<br>em menos de 1 hora</h2>
+      <p>Preencha e nossa equipe entra em contato rapidamente.</p>
+      <div id="form-main">
+        <div class="fg"><label>Seu Nome *</label><input type="text" id="nome" placeholder="Ex: Joao Silva"></div>
+        <div class="fg"><label>WhatsApp / Telefone *</label><input type="tel" id="telefone" placeholder="(21) 99999-9999"></div>
+        <div class="fg"><label>Tipo de Serviço</label>
+          <select id="servico">
+            <option value="">Selecione o servico</option>
+            <option>Desinsetização (baratas, formigas...)</option>
+            <option>Desratização (ratos)</option>
+            <option>Descupinização</option>
+            <option>Higienização de Reservatório</option>
+            <option>Afastamento de Pombos</option>
+            <option>Sanitização</option>
+            <option>Antimofo</option>
+            <option>Outro / Não sei ainda</option>
+          </select>
+        </div>
+        <div class="fg"><label>Tipo de Imóvel</label>
+          <select id="imovel">
+            <option value="">Selecione</option>
+            <option>Residência / Casa</option>
+            <option>Apartamento</option>
+            <option>Empresa / Comercio</option>
+            <option>Condomínio</option>
+            <option>Restaurante / Bar</option>
+            <option>Veículo</option>
+          </select>
+        </div>
+        <button class="bfm" onclick="enviar()">&#9989; SOLICITAR ORÇAMENTO GRÁTIS</button>
+        <p class="f-disc">&#128274; Seus dados estão protegidos. Sem spam.</p>
+      </div>
+      <div class="f-suc" id="form-ok">
+        <div style="font-size:2.4rem;margin-bottom:9px">&#127881;</div>
+        <h3>Solicitação Enviada!</h3>
+        <p>Entraremos em contato em até <strong>1 hora</strong>.</p><br>
+        <a id="wpp-link" href="#" class="bfm" style="text-decoration:none;margin-top:7px">Confirmar pelo WhatsApp &#8594;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="sec-lbl rev">Por que nos escolher</div>
+  <h2 class="sec-ttl rev">Qualidade e segurança<br>em cada atendimento</h2>
+  <p class="sec-sub rev">Especialistas em controle de pragas com método, produtos homologados e garantia real.</p>
+  <div class="wg">
+    <div class="wc rev"><div class="wi">&#127885;</div><div class="wc-txt"><h3>Empresa Certificada</h3><p>Alvara sanitario e certificacao Anvisa. Trabalhamos dentro da legislação com total segurança.</p></div></div>
+    <div class="wc rev"><div class="wi">&#9889;</div><div class="wc-txt"><h3>Atendimento Rápido</h3><p>Agendamento no mesmo dia. Equipe pontual e preparada para resolver seu problema.</p></div></div>
+    <div class="wc rev"><div class="wi">&#128737;</div><div class="wc-txt"><h3>Garantia do Serviço</h3><p>Se as pragas voltarem dentro do prazo, a gente resolve sem custo adicional.</p></div></div>
+    <div class="wc rev"><div class="wi">&#127807;</div><div class="wc-txt"><h3>Produtos Seguros</h3><p>Produtos aprovados pela Anvisa, seguros para crianças, pets e idosos.</p></div></div>
+    <div class="wc rev"><div class="wi">&#128176;</div><div class="wc-txt"><h3>Preço Justo</h3><p>Orçamento gratuito e transparente. Sem taxas ocultas ou surpresas.</p></div></div>
+    <div class="wc rev"><div class="wi">&#128203;</div><div class="wc-txt"><h3>Certificado e Garantia</h3><p>Certificamos e garantimos cada serviço realizado com total comprometimento.</p></div></div>
+  </div>
+</section>
+
+<section class="svc" id="servicos">
+  <div class="sec-lbl rev">Nossos Serviços</div>
+  <h2 class="sec-ttl rev">Temos a solução certa<br>para o seu problema</h2>
+  <p class="sec-sub rev">Clique em qualquer serviço para saber mais e solicitar orcamento.</p>
+  <div class="sg">
+    <div class="sc rev" onclick="am('desinset')"><img src="svc-desinset.jpg" alt="Desinsetização"><div class="sb"><div class="ser"><span class="se">&#129715;</span><span class="stg">Insetos</span></div><h3>Desinsetização</h3><p class="sp">Controle de baratas, formigas, moscas, mosquitos, cupins, vespas, pulgas e percevejos.</p><button class="sbt">Saiba mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></div>
+    <div class="sc rev sc-desrat" onclick="am('desrat')"><img src="svc-desrat.jpg" alt="Desratização"><div class="sb"><div class="ser"><span class="se">&#128000;</span><span class="stg">Roedores</span></div><h3>Desratização</h3><p class="sp">Eliminacao e controle de ratos com estudo tecnico baseado no método 4 A's.</p><button class="sbt">Saiba mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></div>
+    <div class="sc rev" onclick="am('sanveg')"><img src="svc-sanveg.jpg" alt="Saneamento Vegetal"><div class="sb"><div class="ser"><span class="se">&#127807;</span><span class="stg">Vegetacao</span></div><h3>Saneamento Vegetal</h3><p class="sp">Capina quimica autorizada pelo INEA com herbicidas registrados no Ibama.</p><button class="sbt">Saiba mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></div>
+    <div class="sc rev" onclick="am('higieniz')"><img src="svc-higieniz.jpg" alt="Higienização"><div class="sb"><div class="ser"><span class="se">&#128167;</span><span class="stg">Agua Potavel</span></div><h3>Higienização de Reservatórios</h3><p class="sp">Limpeza e desinfeccao de caixas d'agua conforme Lei Estadual n&ordm; 1.893.</p><button class="sbt">Saiba mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></div>
+    <div class="sc rev" onclick="am('sanit')"><img src="svc-sanit.jpg" alt="Sanitização"><div class="sb"><div class="ser"><span class="se">&#129514;</span><span class="stg">Desinfeccao</span></div><h3>Sanitização</h3><p class="sp">Pulverizacao e nebulizacao com quaternario de amonio de última geração.</p><button class="sbt">Saiba mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></div>
+    <div class="sc rev" onclick="am('aracn')"><img src="svc-aracn.jpg" alt="Aracnídeos"><div class="sb"><div class="ser"><span class="se">&#128375;</span><span class="stg">Aracnídeos</span></div><h3>Controle de Aracnídeos</h3><p class="sp">Controle de aranhas, carrapatos e escorpioes com ações técnicas estratégicas.</p><button class="sbt">Saiba mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></div>
+    <div class="sc rev" onclick="am('pombos')"><img src="svc-pombos.jpg" alt="Pombos"><div class="sb"><div class="ser"><span class="se">&#128330;</span><span class="stg">Pombos</span></div><h3>Afastamento de Pombos</h3><p class="sp">Tecnologia de pulsos eletromagneticos que repelem pombos respeitando a lei ambiental.</p><button class="sbt">Saiba mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></div>
+    <div class="sc rev" onclick="am('antimofo')"><img src="svc-antimofo.jpg" alt="Antimofo"><div class="sb"><div class="ser"><span class="se">&#129529;</span><span class="stg">Fungos</span></div><h3>Antimofo</h3><p class="sp">Eliminacao de mofos e bolores com técnicas eficazes, prevenindo doenças.</p><button class="sbt">Saiba mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></div>
+  </div>
+</section>
+
+<section class="cov">
+  <div class="sec-lbl rev">Área de Atendimento</div>
+  <h2 class="sec-ttl rev">Atendemos todo o Rio de Janeiro<br>e Grande Rio</h2>
+  <p class="sec-sub rev">Nossa equipe cobre a capital e toda a região metropolitana.</p>
+  <div class="cds rev">
+    <span class="cd hi">&#128205; Rio de Janeiro</span><span class="cd hi">&#128205; Niterói</span>
+    <span class="cd">Nova Iguaçu</span><span class="cd">Duque de Caxias</span><span class="cd">Belford Roxo</span>
+    <span class="cd">São João de Meriti</span><span class="cd">Nilópolis</span><span class="cd">Mesquita</span>
+    <span class="cd">Queimados</span><span class="cd">Mage</span><span class="cd">Guapimirim</span>
+    <span class="cd">Petrópolis</span><span class="cd">Itaboraí</span><span class="cd">São Gonçalo</span>
+  </div>
+  <a href="https://wa.me/5521986776208?text=Verificar+regiao" class="bwb rev" target="_blank" style="display:inline-flex;gap:10px;align-items:center">
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Verificar Minha Região
+  </a>
+</section>
+
+<section class="proc">
+  <div class="sec-lbl rev">Como Funciona</div>
+  <h2 class="sec-ttl rev">Simples, rápido e sem complicação</h2>
+  <p class="sec-sub rev">Do primeiro contato ao ambiente livre de pragas em 4 passos.</p>
+  <div class="sps">
+    <div class="spx rev"><div class="sn">01</div><div><h3>Solicite o Orçamento</h3><p>Entre em contato pelo formulário, WhatsApp ou telefone. Grátis e sem compromisso.</p></div></div>
+    <div class="spx rev"><div class="sn">02</div><div><h3>Avaliação Rápida</h3><p>Nossa equipe avalia e apresenta a melhor solução com preço transparente.</p></div></div>
+    <div class="spx rev"><div class="sn">03</div><div><h3>Aplicação Profissional</h3><p>Técnicos certificados realizam o serviço com produtos homologados e seguros.</p></div></div>
+    <div class="spx rev"><div class="sn">04</div><div><h3>Garantia e Certificado</h3><p>Entregamos garantia real. Problema resolvido de verdade.</p></div></div>
+  </div>
+</section>
+
+<section class="test">
+  <div class="sec-lbl rev">Depoimentos</div>
+  <h2 class="sec-ttl rev">O que nossos clientes dizem</h2>
+  <p class="sec-sub rev">Mais de 3.000 clientes satisfeitos no Rio de Janeiro.</p>
+  <div class="rg">
+    <div class="rc rev"><div class="rs">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rt">"Atendimento excelente! Resolveram o problema de ratos na minha casa em uma visita. Equipe pontual e muito profissional."</p><div class="rv"><img src="face-roberto.jpg" class="ra" alt="Roberto M."><div class="ri"><strong>Roberto M.</strong><span>Barra da Tijuca, RJ</span></div></div></div>
+    <div class="rc rev"><div class="rs">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rt">"Fiz descupinizacao no meu apartamento. Servico impecavel, laudo emitido na hora. Super recomendo a Avante Control!"</p><div class="rv"><img src="face-ana.jpg" class="ra" alt="Ana Paula S."><div class="ri"><strong>Ana Paula S.</strong><span>Niterói, RJ</span></div></div></div>
+    <div class="rc rev"><div class="rs">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rt">"Contratei para meu restaurante. Produto sem cheiro forte, resultado ótimo e segurança total para minha equipe."</p><div class="rv"><img src="face-carlos.jpg" class="ra" alt="Carlos E."><div class="ri"><strong>Carlos E.</strong><span>Nova Iguaçu, RJ</span></div></div></div>
+  </div>
+</section>
+
+<div class="mvv">
+  <div class="sec-lbl rev">Nossa Empresa</div>
+  <h2 class="sec-ttl rev">Missão, Visão e Valores</h2>
+  <div class="mvv-car">
+    <div class="mvv-track" id="mvvTrack">
+      <div class="mvv-slide">
+        <img class="mvv-img" src="mvv-missao.jpg" alt="Missão">
+        <div class="mvv-content"><span class="mvv-icon">&#127919;</span><h3>Missão</h3><p>Oferecer excelência em serviço e atendimento com foco na solução e proteção do ambiente, garantindo saúde e segurança para nossos clientes.</p></div>
+      </div>
+      <div class="mvv-slide">
+        <img class="mvv-img" src="mvv-visao.jpg" alt="Visão">
+        <div class="mvv-content"><span class="mvv-icon">&#128301;</span><h3>Visão</h3><p>Ser referência em soluções sanitárias no Rio de Janeiro, proporcionando aos clientes e parceiros uma relação transparente e duradoura com foco na saúde e bem-estar.</p></div>
+      </div>
+      <div class="mvv-slide">
+        <img class="mvv-img" src="mvv-valores.jpg" alt="Valores">
+        <div class="mvv-content"><span class="mvv-icon">&#128142;</span><h3>Valores</h3><ul><li>Satisfação em atender</li><li>Comprometimento na entrega do melhor resultado</li><li>Valorizar quem faz a nossa empresa</li><li>Qualidade e melhoria contínua</li><li>Respeito e responsabilidade</li><li>Foco na satisfação do cliente</li></ul></div>
+      </div>
+    </div>
+    <div class="car-nav">
+      <button class="car-btn" id="mvvPrev">&#8592;</button>
+      <div class="car-dots" id="mvvDots"></div>
+      <button class="car-btn" id="mvvNext">&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- PARCEIROS: carrossel em slides de 4 logos -->
+<div class="parc">
+  <div class="sec-lbl rev">Empresas Atendidas</div>
+  <h2 class="sec-ttl rev">Parceiros que confiam<br>na Avante Control</h2>
+  <div class="ps-car">
+    <div class="ps-track" id="psTrack">
+      <div class="ps-slide">
+        <div class="ps-item"><img src="logo-syslog.jpg" alt="Syslog Galeao"></div>
+        <div class="ps-item"><img src="logo-multimodal.jpg" alt="Multi Modal Duque de Caxias"></div>
+        <div class="ps-item"><img src="logo-seara.jpg" alt="Seara"></div>
+        <div class="ps-item"><img src="logo-prefeitura.jpg" alt="Prefeitura Rio Rioluz"></div>
+      </div>
+      <div class="ps-slide">
+        <div class="ps-item"><img src="logo-ultragaz.jpg" alt="Ultragaz"></div>
+        <div class="ps-item"><img src="logo-ativplus.jpg" alt="Ativ Plus"></div>
+        <div class="ps-item"><img src="logo-casalit.jpg" alt="Casalit"></div>
+        <div class="ps-item"><img src="logo-cisbaf.jpg" alt="Cisbaf"></div>
+      </div>
+      <div class="ps-slide">
+        <div class="ps-item"><img src="logo-premierpet.jpg" alt="PremieRpet"></div>
+        <div class="ps-item"><img src="logo-belov.jpg" alt="Belov"></div>
+        <div class="ps-item"><img src="logo-hyundai.jpg" alt="Hyundai Heavy Industries Brasil"></div>
+        <div class="ps-item"><img src="logo-solvi.jpg" alt="Solvi Essencis Ambiental"></div>
+      </div>
+      <div class="ps-slide">
+        <div class="ps-item"><img src="logo-tsa.jpg" alt="TSA Terminals"></div>
+        <div class="ps-item"><img src="logo-innova.jpg" alt="Innova"></div>
+        <div class="ps-item"><img src="logo-airproducts.jpg" alt="Air Products"></div>
+        <div class="ps-item"><img src="logo-vtclog.jpg" alt="VTCLog Operador Logistico"></div>
+      </div>
+    </div>
+    <div class="car-nav parc-nav">
+      <button class="car-btn" id="psPrev">&#8592;</button>
+      <div class="car-dots" id="psDots"></div>
+      <button class="car-btn" id="psNext">&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<section class="ctaf">
+  <div class="sec-lbl">Solicite Agora</div>
+  <h2>Ambiente livre de pragas<br>começa com uma mensagem</h2>
+  <p>Orçamento gratuito, resposta em até 1 hora, atendimento em todo o Rio de Janeiro.</p>
+  <div class="cbs">
+    <a href="https://wa.me/5521986776208?text=Ola!%20Quero%20orcamento%20gratuito." class="bwb" target="_blank">
+      <svg width="23" height="23" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar no WhatsApp
+    </a>
+    <a href="tel:2127780344" class="bpb">&#128222; (21) 2778-0344</a>
+  </div>
+</section>
+
+<footer>
+  <div class="fg2">
+    <div>
+      <div class="flw"><img src="logo.png" alt="Avante Control" class="fli"></div>
+      <p class="fdes">Empresa especializada em controle de pragas, dedetização e saneamento ambiental no Rio de Janeiro. Certificada e comprometida com a saúde e segurança da sua família.</p>
+      <div class="fco">
+        <a href="tel:2127780344">&#128222; (21) 2778-0344</a>
+        <a href="https://wa.me/5521986776208" target="_blank">&#128172; (21) 98677-6208</a>
+        <a href="/cdn-cgi/l/email-protection#0c6f6362786d78634c6d7a6d6278696f6362787e6360226f6361226e7e">&#9993; <span class="__cf_email__" data-cfemail="d5b6babba1b4a1ba95b4a3b4bba1b0b6babba1a7bab9fbb6bab8fbb7a7">[email&#160;protected]</span></a>
+      </div>
+    </div>
+    <div class="fc2"><h4>Servicos</h4><ul><li>Desinsetização</li><li>Desratização</li><li>Descupinização</li><li>Higienização de Reservatório</li><li>Afastamento de Pombos</li><li>Sanitização &middot; Antimofo</li></ul></div>
+    <div class="fc2"><h4>Localização</h4><ul><li>Rua Jornalista Moacir Padilha, 15</li><li>QD 3 B - Jardim Primavera</li><li>Rio de Janeiro - RJ</li><li>CEP 22215-250</li></ul></div>
+  </div>
+  <div class="fbot">
+    <span>&#169; 2026 Avante Control Soluções Ambientais. Todos os direitos reservados.</span>
+    <span>Alvará Sanitário &middot; Certificação Anvisa</span>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+var sv = {
+  desinset:{e:"&#129715;",t:"Desinsetização",g:"Controle de Insetos",i:"svc-desinset.jpg",w:"Desinsetização",x:"<p><strong>Controle de baratas, formigas, moscas, mosquitos, cupins, vespas, pulgas e percevejos.</strong></p><p>Os insetos causam grandes problemas em residências e empresas. O controle é obrigatório pela RDC 52 do Ministério da Saúde e Lei Estadual 7806/17.</p><p>A Avante Control oferece processos químicos seguros nas formas líquida, gel e aerossol, definidos em PCA por Biólogos especializados.</p>"},
+  desrat:{e:"&#128000;",t:"Desratização",g:"Controle de Roedores",i:"svc-desrat.jpg",w:"Desratização",x:"<p>Encontramos três espécies principais: <strong>Rattus norvegicus</strong> (Ratazana), <strong>Rattus rattus</strong> (Rato de telhado) e <strong>Mus musculus</strong> (Camundongo). Transmitem hantavírus, leptospirose e micoses.</p><p>Usamos o método <strong>4 As: Acesso, Alimento, Água e Abrigo</strong> com iscas anticoagulantes em pontos estratégicos, formando o anel sanitário conforme legislação.</p>"},
+  sanveg:{e:"&#127807;",t:"Saneamento Vegetal",g:"Capina Química",i:"svc-sanveg.jpg",w:"Saneamento+Vegetal",x:"<p>Realizamos <strong>capina química</strong> autorizada pelo <strong>INEA</strong>, eliminando vegetação indesejada com herbicidas registrados no <strong>Ibama</strong>.</p>"},
+  higieniz:{e:"&#128167;",t:"Higienização de Reservatórios",g:"Água Potável",i:"svc-higieniz.jpg",w:"Higieniza%C3%A7%C3%A3o",x:"<p>Realizamos limpeza e desinfecção de caixas d'água, castelos e cisternas conforme a <strong>Lei Estadual nº 1.893/91</strong>, que exige manutenção a cada <strong>seis meses</strong>.</p>"},
+  sanit:{e:"&#129514;",t:"Sanitização",g:"Desinfecção Ambiental",i:"svc-sanit.jpg",w:"Sanitização",x:"<p>Pulverização e nebulização com <strong>quaternário de amônio de última geração</strong> que elimina fungos, vírus e bactérias em escolas, hospitais, empresas e residências.</p>"},
+  aracn:{e:"&#128375;",t:"Controle de Aracnídeos",g:"Aranhas, Escorpiões e Carrapatos",i:"svc-aracn.jpg",w:"Aracnídeos",x:"<p>No Brasil há estimativa anual de <strong>5 mil acidentes com aranhas</strong> e <strong>8 mil com escorpiões</strong>. A Avante Control executa ações técnicas estratégicas, conhecendo o ciclo de vida da praga para garantir controle eficiente.</p>"},
+  pombos:{e:"&#128330;",t:"Afastamento de Pombos",g:"Controle de Aves",i:"svc-pombos.jpg",w:"Pombos",x:"<p>Pombos transmitem até 57 doenças como histoplasmose e salmonella. Usamos <strong>dispositivos de pulsos eletromagnéticos</strong> que afastam os pombos sem causar danos, em conformidade com a Lei Federal Nº 9.605/98.</p>"},
+  antimofo:{e:"&#129529;",t:"Antimofo",g:"Fungos e Bolores",i:"svc-antimofo.jpg",w:"Antimofo",x:"<p>Mofos são fungos filamentosos que crescem em ambientes úmidos. A Avante Control possui técnicas eficazes na eliminação, com orientação sobre <strong>arejamento e limpeza adequados</strong> para prevenir o retorno.</p>"}
+};
+
+function am(id) {
+  var s = sv[id]; if (!s) return;
+  document.getElementById("mimg").src = s.i;
+  document.getElementById("memo").innerHTML = s.e;
+  document.getElementById("mtit").textContent = s.t;
+  document.getElementById("mtag").textContent = s.g;
+  document.getElementById("mtxt").innerHTML = s.x;
+  document.getElementById("mwpp").href = "https://wa.me/5521986776208?text=Quero+orcamento+de+" + s.w;
+  document.getElementById("modal").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function fm() {
+  document.getElementById("modal").classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.addEventListener("keydown", function(e) { if (e.key === "Escape") fm(); });
+
+var obs = new IntersectionObserver(function(en) {
+  en.forEach(function(e, i) {
+    if (e.isIntersecting) setTimeout(function() { e.target.classList.add("visible"); }, i * 75);
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll(".rev").forEach(function(el) { obs.observe(el); });
+
+document.getElementById("telefone").addEventListener("input", function(e) {
+  var v = e.target.value.replace(/\D/g, "").slice(0, 11);
+  if (v.length >= 7) v = "(" + v.slice(0,2) + ") " + v.slice(2,7) + "-" + v.slice(7);
+  else if (v.length >= 3) v = "(" + v.slice(0,2) + ") " + v.slice(2);
+  e.target.value = v;
+});
+
+function enviar() {
+  var n = document.getElementById("nome").value.trim();
+  var t = document.getElementById("telefone").value.trim();
+  var s = document.getElementById("servico").value;
+  var i = document.getElementById("imovel").value;
+  if (!n || !t) { alert("Por favor, preencha seu nome e telefone."); return; }
+  var m = encodeURIComponent("Ola! Vim pelo site e quero um orcamento.\nNome: " + n + "\nTelefone: " + t + "\nServico: " + (s || "Nao informado") + "\nImovel: " + (i || "Nao informado"));
+  document.getElementById("wpp-link").href = "https://wa.me/5521986776208?text=" + m;
+  document.getElementById("form-main").style.display = "none";
+  document.getElementById("form-ok").style.display = "block";
+  setTimeout(function() { window.open("https://wa.me/5521986776208?text=" + m, "_blank"); }, 700);
+}
+
+function mkCar(trackId, prevId, nextId, dotsId, autoMs) {
+  var track = document.getElementById(trackId);
+  var dotsEl = document.getElementById(dotsId);
+  if (!track) return;
+  var slides = track.querySelectorAll(".mvv-slide, .ps-slide");
+  var n = slides.length;
+  var cur = 0;
+  var autoT;
+  for (var i = 0; i < n; i++) {
+    (function(idx) {
+      var d = document.createElement("button");
+      d.className = "car-dot" + (idx === 0 ? " on" : "");
+      d.addEventListener("click", function() { go(idx); restart(); });
+      dotsEl.appendChild(d);
+    })(i);
+  }
+  function go(idx) {
+    cur = (idx + n) % n;
+    track.style.transform = "translateX(-" + (cur * 100) + "%)";
+    dotsEl.querySelectorAll(".car-dot").forEach(function(d, i) { d.classList.toggle("on", i === cur); });
+  }
+  function restart() {
+    clearInterval(autoT);
+    autoT = setInterval(function() { go(cur + 1); }, autoMs);
+  }
+  document.getElementById(prevId).addEventListener("click", function() { go(cur - 1); restart(); });
+  document.getElementById(nextId).addEventListener("click", function() { go(cur + 1); restart(); });
+  var sx = 0;
+  track.addEventListener("touchstart", function(e) { sx = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener("touchend", function(e) {
+    var dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 40) { go(dx < 0 ? cur + 1 : cur - 1); restart(); }
+  }, { passive: true });
+  restart();
+}
+
+mkCar("mvvTrack", "mvvPrev", "mvvNext", "mvvDots", 5000);
+mkCar("psTrack",  "psPrev",  "psNext",  "psDots",  4000);
+</script>
+</body>
+</html>
